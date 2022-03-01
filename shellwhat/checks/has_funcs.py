@@ -23,7 +23,7 @@ def strip_ansi(state: State) -> State:
 def has_code(
     state: State,
     text: str,
-    incorrect_msg: str = "The checker expected to find `{{text}}` in your command.",
+    incorrect_msg: str = "Ожидалось увидеть `{{text}}` в вашей команде.",
     fixed: bool = False,
 ) -> State:
     """Check whether the student code contains text.
@@ -75,7 +75,7 @@ def has_code(
 def has_output(
     state: State,
     text: str,
-    incorrect_msg: str = "The checker expected to find {{'' if fixed else 'the pattern '}}`{{text}}` in the output of your command.",
+    incorrect_msg: str = "Ожидалось увидеть {{'' if fixed else 'the pattern '}}`{{text}}` на выходе вашей программы.",
     fixed: bool = False,
     strip_ansi: bool = True,
 ) -> State:
@@ -132,7 +132,7 @@ def has_output(
 def has_cwd(
     state: State,
     dir: str,
-    incorrect_msg: str = "Your current working directory should be `{{dir}}`. Use `cd {{dir}}` to navigate there.",
+    incorrect_msg: str = "Ваша рабочая директория должна быть `{{dir}}`. Используйте `cd {{dir}}` чтобы попасть в нее.",
 ) -> State:
     """Check whether the student is in the expected directory.
 
@@ -248,7 +248,7 @@ example = """
 
 has_expr_output = partial(
     has_expr,
-    incorrect_msg="The checker expected to find the result of `{{expr}}` in your output, but couldn't.",
+    incorrect_msg="Ожидалось в результате `{{expr}}` на выходе программы, но получился другой ответ.",
     test="output",
 )
 has_expr_output.__name__ = "has_expr_output"
@@ -256,7 +256,8 @@ has_expr_output.__doc__ = docstr.format("result") + example
 
 has_expr_exit_code = partial(
     has_expr,
-    incorrect_msg="The checker expected to get the exit code `{{output}}` when executing `{{expr}}` in your output, but didn't.",
+    #incorrect_msg="The checker expected to get the exit code `{{output}}` when executing `{{expr}}` in your output, but didn't.",
+    incorrect_msg="Ожидалось получить при завершении программы `{{output}}` при запуске `{{expr}}` на выходе, но получился другой результат.",
     strict=True,
     test="exit_code",
 )
