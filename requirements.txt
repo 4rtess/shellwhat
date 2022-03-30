@@ -1,5 +1,5 @@
 # pkg deps
-tcs_protowhat~=2.0.1
+tcs-protowhat==2.1.4
 antlr-ast~=0.8.1
 
 # test deps

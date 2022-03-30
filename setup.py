@@ -5,8 +5,8 @@ import ast
 from os import path
 from setuptools import setup
 
-PACKAGE_NAME = "shellwhat"
-REQUIREMENT_NAMES = ["protowhat", "antlr-ast"]
+PACKAGE_NAME = "tcs-shellWhat"
+REQUIREMENT_NAMES = ["tcs-protowhat", "antlr-ast"]
 
 HERE = path.abspath(path.dirname(__file__))
 VERSION_FILE = path.join(HERE, PACKAGE_NAME, "__init__.py")
@@ -38,7 +38,7 @@ setup(
     author_email="michael@datacamp.com",
     maintainer="Jeroen Hermans",
     maintainer_email="content-engineering@datacamp.com",
-    url="https://github.com/datacamp/shellwhat",
+    url="https://github.com/4rtess/shellwhat",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU Affero General Public License v3",
